@@ -483,4 +483,3 @@ When prompted, allow all tools from the server "gdg-kochi-remote".
 - If you encounter authentication errors, ensure your `ID_TOKEN` is up to date (tokens expire after a period of time)
 - Make sure the Cloud Run service URL in `settings.json` matches your actual deployment region
 - Verify that the IAM policy binding was applied correctly
-- Check Cloud Run logs if the server isn't responding: `gcloud run logs read zoo-mcp-server`
