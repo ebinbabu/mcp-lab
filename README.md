@@ -42,6 +42,7 @@ Create a directory for your MCP server:
 
 ```bash
 mkdir mcp
+
 cd mcp/
 ```
 
@@ -278,7 +279,7 @@ GDG_KOCHI = [
 
 @mcp.tool()
 def search_sessions(query: str) -> List[Dict[str, Any]]:
-    """Search GDG Ko uchi sessions.
+    """Search GDG Kochi sessions.
 
     Performs a case-insensitive substring search over session titles and
     speaker names and returns matching session dicts from `GDG_KOCHI`.
@@ -383,7 +384,7 @@ CMD ["uv", "run", "server.py"]
 Deploy your MCP server to Cloud Run:
 
 ```bash
-gcloud run deploy zoo-mcp-server \
+gcloud run deploy gdg-kochi-mcp-server \
     --no-allow-unauthenticated \
     --region=asia-south1 \
     --source=. \
@@ -430,7 +431,7 @@ Create the Gemini settings file `~/.gemini/settings.json`:
     },
     "mcpServers": {
         "zoo-remote": {
-            "httpUrl": "https://zoo-mcp-server-$PROJECT_NUMBER.europe-west1.run.app/mcp",
+            "httpUrl": "https://gdg-kochi-mcp-server-$PROJECT_NUMBER.europe-west1.run.app/mcp",
             "headers": {
                 "Authorization": "Bearer $ID_TOKEN"
             }
@@ -445,7 +446,6 @@ Create the Gemini settings file `~/.gemini/settings.json`:
 ```
 
 **Note:** Make sure to:
-- Replace `europe-west1` with your actual Cloud Run region (e.g., `asia-south1` if you used that region)
 - Replace `$PROJECT_NUMBER` with your actual project number if the variable isn't expanded automatically
 - Replace `$ID_TOKEN` with your actual ID token if the variable isn't expanded automatically
 
@@ -467,11 +467,16 @@ In the Gemini CLI, navigate to:
 
 Try asking questions like:
 
-- "Where can I find penguins?"
-- "What animals are in the Savannah Heights trail?"
-- "Tell me about Leo the lion"
+- “Show sessions longer than 20 minutes.”
+- “Build my personal schedule if I want to attend talks about AI and Security.”
+- “Write a 280-character tweet announcing Merin’s keynote.”
+- “Create five suggested audience questions for the talk ‘Run SQL Everywhere’.”
+- “Which sessions overlap or are parallel (workshops vs main hall)?”
+- “Give me a list of all speakers and their organizations.”
+- “Which speakers are Google employees?”
+- “Who’s speaking at 09:40 AM?”
 
-When prompted, allow all tools from the server "zoo-remote".
+When prompted, allow all tools from the server "gdg-kochi-remote".
 
 ## Troubleshooting
 

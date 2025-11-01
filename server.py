@@ -196,7 +196,7 @@ GDG_KOCHI = [
 
 @mcp.tool()
 def search_sessions(query: str) -> List[Dict[str, Any]]:
-    """Search GDG Ko uchi sessions.
+    """Search GDG Kochi sessions.
 
     Performs a case-insensitive substring search over session titles and
     speaker names and returns matching session dicts from `GDG_KOCHI`.
