@@ -430,7 +430,7 @@ Create the Gemini settings file `~/.gemini/settings.json`:
         "hasSeenNudge": true
     },
     "mcpServers": {
-        "zoo-remote": {
+        "gdg-remote": {
             "httpUrl": "https://gdg-kochi-mcp-server-$PROJECT_NUMBER.europe-west1.run.app/mcp",
             "headers": {
                 "Authorization": "Bearer $ID_TOKEN"
